@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { useTransform, useScroll } from "framer-motion";
@@ -11,8 +13,10 @@ interface ModelProps {
   progress: any; // Adjust this type as needed
 }
 
-function Model({ progress }: ModelProps) {
+function Model({ progress }: ModelProps, ref: React.Ref<THREE.Mesh>) {
   const mesh = useRef<THREE.Mesh>(null!);
+
+  // const mesh = useRef();
   const { scene } = useGLTF("/primobot.gltf");
   scene.scale.set(1.5, 1.5, 1.5);
 

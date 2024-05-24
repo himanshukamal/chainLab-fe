@@ -36,7 +36,7 @@ export default function VerticalLinearStepper() {
   };
 
   return (
-    <Box sx={{ maxWidth: 400 }}>
+    <div className="max-w-[400px]">
       <Stepper activeStep={activeStep} orientation="vertical">
         {steps.map((step, index) => (
           <Step key={step.label}>
@@ -56,7 +56,7 @@ export default function VerticalLinearStepper() {
               <Typography color="white" className="font-made-outer-sans">
                 {step.description}
               </Typography>
-              <Box sx={{ mb: 2 }}>
+              <div className="mb-2">
                 <div>
                   <Button
                     variant="contained"
@@ -73,7 +73,7 @@ export default function VerticalLinearStepper() {
                     Back
                   </Button>
                 </div>
-              </Box>
+              </div>
             </StepContent>
           </Step>
         ))}
@@ -86,6 +86,6 @@ export default function VerticalLinearStepper() {
           </Button>
         </Paper>
       )}
-    </Box>
+    </div>
   );
 }
